@@ -1,0 +1,54 @@
+{
+  "name": "@savvagent/tiny-i18next",
+  "version": "2.1.0",
+  "description": "A lightweight translation module for modern Javascript",
+  "module": "dist/I18next.js",
+  "main": "dist/I18next.js",
+  "types": "dist/I18next.d.ts",
+  "scripts": {
+    "build": "rimraf dist && node ./esbuild.config.js",
+    "build:watch": "rimraf dist && node ./esbuild.config.js -w",
+    "check": "tsc -w",
+    "del": "rimraf dist",
+    "dev": "run-p check build:watch"
+  },
+  "author": "rob@savvagent.com",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.2.5",
+    "@typescript-eslint/eslint-plugin": "^5.59.8",
+    "@typescript-eslint/parser": "^5.59.8",
+    "chai": "^4.3.7",
+    "esbuild": "^0.14.54",
+    "esbuild-serve": "^1.0.1",
+    "eslint": "^8.42.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "esm": "^3.2.25",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "mock-socket": "^9.2.1",
+    "playwright-test": "^7.4.1",
+    "prettier": "^2.8.8",
+    "rimraf": "^3.0.2",
+    "sinon": "^14.0.2",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "npm-run-all": "^4.1.5"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/savvagent/tiny-i18next.git"
+  },
+  "keywords": ["i18n", "translations", "placeholders", "plurals"],
+  "bugs": {
+    "url": "https://github.com/savvagent/tiny-i18next/issues"
+  },
+  "homepage": "https://github.com/savvagent/tiny-i18next#readme"
+}

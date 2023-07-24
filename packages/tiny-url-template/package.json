@@ -1,0 +1,25 @@
+{
+  "name": "@savvagent/tiny-url-template",
+  "version": "1.0.0",
+  "description": "Lightweight Javascript library which complies with RFC 6570 for expanding URL Templates.",
+  "keywords": ["Lightweight", "Javascript", "library", "es2015", "URI Templates", "RFC 6570"],
+  "repository": "https://github.com/savvagenty-os/tiny.git",
+  "main": "dist/cjs/TinyUrlTemplate.js",
+  "module": "dist/esm/TinyUrlTemplate.js",
+  "scripts": {
+    "build": "node esbuild.config.js",
+    "build:w": "nodemon -w esbuild.config.js -w src esbuild.config.js",
+    "docs": "esdoc -c .esdoc.json"
+  },
+  "author": "rob@savvagent.org",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.18.4",
+    "glob": "^10.2.7",
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "@savvagent/tiny-uri": "workspace:*"
+  },
+  "type": "module"
+}
