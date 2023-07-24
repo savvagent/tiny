@@ -1,6 +1,6 @@
 {
   "name": "@savvagent/tiny-fetch",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Lightweight isomorphic JavaScript HTTP client",
   "exports": {
     "./TinyFetch": {
