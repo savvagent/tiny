@@ -1,6 +1,6 @@
 {
   "name": "@savvagent/tiny-uri",
-  "version": "1.0.0",
+  "version": "2.0.32",
   "description": "Lightweight Javascript library for handling URLs",
   "keywords": ["Lightweight", "Javascript", "library", "es2015", "URLs"],
   "repository": "https://github.com/robhicks/tiny-uri.git",
