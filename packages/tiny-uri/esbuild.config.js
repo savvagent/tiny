@@ -2,7 +2,7 @@ import * as esbuild from 'esbuild'
 
 const watch = process.argv.includes('-w')
 
-const entryPoints = ['src/index.js']
+const entryPoints = ['src/TinyUri.js']
 
 const browserConfig = {
   bundle: true,
@@ -24,30 +24,18 @@ const cjsConfig = {
   },
 }
 
-const testConfig = {
-  bundle: true,
-  entryPoints: ['src/tests/index.js'],
-  format: 'esm',
-  minify: false,
-  outfile: 'tests/browser-bundle.js',
-  sourcemap: false,
-}
-
-
 if (watch) {
   console.log('watch', watch)
   const ctx = await esbuild.context({
-    entryPoints: ['src/tests/index.js'],
+    entryPoints: ['test/browser.js'],
     bundle: true,
     format: 'esm',
     minify: false,
     sourcemap: false,
-    outfile: 'tests/browser-bundle.js',
+    outfile: 'test/browser-bundle.js',
   })
   const { host, port = await ctx.serve({ servedir: '.' }) } = ctx
   console.log('port', port)
 }
 
-Promise.all([esbuild.build(browserConfig), esbuild.build(cjsConfig), esbuild.build(testConfig)]).catch((err) =>
-  console.log('err', err)
-)
+Promise.all([esbuild.build(browserConfig), esbuild.build(cjsConfig)]).catch((err) => console.log('err', err))

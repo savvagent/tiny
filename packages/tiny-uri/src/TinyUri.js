@@ -1,6 +1,6 @@
 import Path from './Path.js';
 import Query from './Query.js';
-import StringBuilder from './StringBuilder.js';
+import { StringBuilder } from '@savvagent/tiny-utils'
 
 /**
  * Uri - manipulate URLs

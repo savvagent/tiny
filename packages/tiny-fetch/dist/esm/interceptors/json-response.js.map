@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../src/interceptors/json-response.js"],
+  "sourcesContent": ["const jsonResponse = {\n  async response(response) {\n    if (response.bodyUsed) return response\n    try {\n      const text = await response.text()\n    const resp = { ...response, ...JSON.parse(text) }\n    return resp\n    } catch (error) {\n      return response\n    }\n  },\n  id: 'TINY_FETCH_JSON_RESPONSE',\n}\n\nexport default jsonResponse\n"],
+  "mappings": "AAAA,IAAMA,EAAe,CACnB,MAAM,SAASC,EAAU,CACvB,GAAIA,EAAS,SAAU,OAAOA,EAC9B,GAAI,CACF,IAAMC,EAAO,MAAMD,EAAS,KAAK,EAEnC,MADa,CAAE,GAAGA,EAAU,GAAG,KAAK,MAAMC,CAAI,CAAE,CAEhD,MAAE,CACA,OAAOD,CACT,CACF,EACA,GAAI,0BACN,EAEOE,EAAQH",
+  "names": ["jsonResponse", "response", "text", "json_response_default"]
+}

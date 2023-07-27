@@ -1,21 +1,19 @@
 {
   "name": "@savvagent/tiny-utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.js",
-      "default": "./dist/index.js"
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.js",
+      "default": "./dist/esm/index.js"
     }
   },
   "scripts": {
     "build": "rimraf dist && node ./esbuild.config.js",
-    "build:w": "rimraf tests && node ./esbuild.config-watch.js",
+    "build:w": "rimraf tests && node ./esbuild.config.js --w",
     "dev": "run-p build:w",
-    "postinstall": "npm run build",
+    "prepublish": "npm run build",
     "test": "uvu tests"
   },
   "keywords": [],

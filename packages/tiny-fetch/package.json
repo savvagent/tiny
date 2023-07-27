@@ -1,6 +1,6 @@
 {
   "name": "@savvagent/tiny-fetch",
-  "version": "3.0.10",
+  "version": "3.0.13",
   "description": "Lightweight isomorphic JavaScript HTTP client",
   "exports": {
     "./TinyFetch": {
@@ -31,7 +31,7 @@
     "dev": "run-p build:w dev:server",
     "mocha": "mocha:w",
     "mocha:w": "mocha -u bdd -R spec -t 5000 --watch test/server-bundle.js",
-    "postinstall": "run-s build",
+    "prepublish": "run-s build",
     "start": "run-p build:w mocha:w",
     "test": "mocha -u bdd -R spec -t 5000 test/server-bundle.js"
   },
@@ -39,7 +39,7 @@
   "license": "MIT",
   "devDependencies": {
     "chai": "^4.3.7",
-    "esbuild": "^0.18.5",
+    "esbuild": "^0.18.16",
     "esm": "^3.2.25",
     "fetch-mock": "^9.11.0",
     "mocha": "^10.2.0",
@@ -50,8 +50,8 @@
     "sinon": "^15.1.2"
   },
   "dependencies": {
-    "@savvagent/tiny-utils": "workspace:*",
-    "@savvagent/tiny-uri": "workspace:*"
+    "@savvagent/tiny-uri": "workspace:*",
+    "@savvagent/tiny-utils": "workspace:*"
   },
   "directories": {
     "test": "test"

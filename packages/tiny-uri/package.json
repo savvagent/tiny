@@ -1,28 +1,29 @@
 {
   "name": "@savvagent/tiny-uri",
-  "version": "2.1.0",
+  "version": "2.1.2",
   "description": "Lightweight Javascript library for handling URLs",
   "keywords": ["Lightweight", "Javascript", "library", "es2015", "URLs"],
   "repository": "https://github.com/robhicks/tiny-uri.git",
-  "browser": "dist/TinyUri.js",
-  "main": "index.js",
-  "module": "dist/tiny-uri.js",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/TinyUri.js",
+      "import": "./dist/esm/TinyUri.js",
+      "default": "./dist/esm/TinyUri.js"
+    }
+  },
   "scripts": {
-    "build": "npx rollup -c",
-    "cypress:open": "npx cypress open",
-    "cypress:run": "cypress run",
-    "docs": "npx esdoc -c .esdoc.json",
-    "start": "rollup -cw",
-    "test": "npx cypress run"
+    "build": "node esbuild.config.js",
+    "build:w": "node esbuild.config.js -w",
+    "prepublish": "node esbuild.config.js"
   },
-  "author": "rob@hixfamily.org",
+  "author": "rob@savvagent.com",
   "license": "MIT",
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^21.0.3",
-    "@rollup/plugin-node-resolve": "^13.1.3",
-    "cypress": "^9.5.3",
-    "rollup": "^2.70.1",
-    "rollup-plugin-terser": "^7.0.2"
+  "dependencies": {
+    "@savvagent/tiny-utils": "workspace:*"
   },
-  "dependencies": {}
+  "devDependencies": {
+    "cypress": "^9.5.3",
+    "esbuild": "^0.18.16"
+  },
+  "type": "module"
 }

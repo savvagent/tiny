@@ -1,0 +1,2 @@
+var a=new Map,r=1e3*60*10,e={id:"TINY_FETCH_LRUCACHE"};e.mapKey=null;e.request=t=>{if(t.cache){let{headers:n,url:s}=t,o=[...n.values()].join("");e.mapKey=JSON.stringify({url:s,method:t.method,headerString:o})}return t};e.response=t=>{if(e.mapKey){if(a.has(e.mapKey))return a.get(e.mapKey);a.set(e.mapKey,t.clone()),setTimeout(()=>{a.delete(e.mapKey)},r)}return t};var l=e;export{l as default};
+//# sourceMappingURL=lrucache.js.map
